@@ -46,19 +46,35 @@
     	
     	$("#submit").click(function() {
 
-    		var name = $("#name").val();
-    		var email = $("#email").val();
-    		var phone = $("#phone").val();
-    		var message = $("#message").val();
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var phone = $("#phone").val();
+      var message = $("#message").val();
 
-    		swal("Good job!", "You clicked the button!", "success");
-    		document.getElementById("name").value = '';
-    		document.getElementById("email").value = '';
-    		document.getElementById("phone").value = '';
-    		document.getElementById("message").value = '';
+      if (name == '' || email == '' || phone == '' || message == '') {
+
+        swal({
+          title: "Fields Empty!",
+          text: "Please check the missing fileds",
+          icon: "warning",
+          button: "Ok",
+        })
+      } else {
+
+        swal({
+          title: "Thanks for submiiting your query!",
+          icon: "success",
+          button: "Ok",
+        })
+        document.getElementById("name").value = '';
+      document.getElementById("email").value = '';
+      document.getElementById("phone").value = '';
+      document.getElementById("message").value = '';
+      }
 
 
-    	})
+    })
+
 
     </script>
 
